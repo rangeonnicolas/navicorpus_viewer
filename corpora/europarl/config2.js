@@ -1,0 +1,6 @@
+
+setParams({
+
+    graphFile : '/europarl.gexf'
+
+});

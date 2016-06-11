@@ -1,0 +1,58 @@
+#ctlzoom {
+    top : 5px;
+    right : 5px;
+    left: initial;
+    vertical-align: middle;
+}
+
+#ctlzoom li {
+    vertical-align: middle; display:inline;
+}
+
+#zoomMinusButton, #zoomPlusButton {
+    vertical-align: middle;
+    display: inline-block;  
+}
+
+#lensButton, #edgesButton {
+    vertical-align: middle;
+    display: inline-block; 
+}
+
+#zoomSlider {
+    width: 120px;
+    height: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#overviewzone {
+    left: 0;
+    border-style: solid solid none none;  
+    border-color: #eee;
+    box-shadow: 2px 0px 2px 0px #808090;
+}
+
+#leftcolumn {
+    bottom: 180px; left: -255px; width: 255px;
+}
+
+#leftcontent {
+    padding: 10px;
+}
+
+a {
+    color: #2C82BD;
+}
+
+a:hover {
+    color: #2C82BD;
+}
+
+#autocomplete li a {
+    color: #2C82BD;
+}
+
+#autocomplete li.hover a {
+    background: #2C82BD;
+}

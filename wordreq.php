@@ -1,0 +1,114 @@
+<?php
+
+// improvements on this code (good practises, etc...) are very welcomed (and encourraged), I wrote this code while learning PHP, so it's like a beginner code...!
+
+	$analytics = true;
+
+//// Only useful for tests
+
+	if(isset($_POST["list"])){
+		$list = unserialize($_POST["list"]);
+		$corpus = $_POST["corpus"];
+		$type = $_POST["type"];
+		$doc = NULL;
+		$word = NULL;
+		header('Content-Type: text/txt; charset=utf-8');
+	
+	}elseif(isset($_POST["allkw"])){
+		$corpus = $_POST["corpus"];
+		$type =  $_POST["type"];
+		$list =unserialize($_POST["list"]);
+		$doc = NULL;
+	}else{
+		$doc = $_POST["doc"];
+		$word = $_POST["word"];
+		$list = NULL;
+		$corpus = $_POST["corpus"];
+		$type =  $_POST["type"];
+		header('Content-Type: text/html; charset=utf-8');
+	}
+
+//// Database connection
+
+	require_once("./php/load_config.php");
+
+	$errMsg = "<br/>An error occurred in the DataBase connection.";
+
+	try{
+		$conn = pg_connect($GLOBALS['DBConf']);
+		if (!$conn) {
+		  echo $errMsg;
+		  exit;
+		}
+	}catch(Exception $e){
+		echo $errMsg;
+		exit;
+	}		
+
+//// Analytics
+
+	if($analytics){
+		if($type=="relatedKewWords"){
+			$requete = "insert into stats.requetes(id_acc) values((select last_value from stats.access_id_seq));";
+			$ptr = pg_query($conn,$requete);
+			for($i=0;$i<sizeof($list);$i=($i+1)){
+				$requete = "insert into stats.motscles (id_req,mc,corpus) values ((select currval('stats.requetes_id_seq')),'".$list[$i]."','".$corpus."');";
+				$ptr = pg_query($conn,$requete);
+			}
+		}elseif($type=="newAccess"){
+			$requete = "insert into stats.access(date,time,corpus) values(CURRENT_DATE,CURRENT_TIME,'".$corpus."');";
+			$ptr = pg_query($conn,$requete);
+		}
+	}
+			
+//// Contruction of the keyword list
+
+	if((sizeof($list)>0 || $doc != NULL) & $type != "newAccess"){
+		$listParam = "'".$list[0]."'";
+		for($i=1 ; $i<sizeof($list) ; $i++){
+			$listParam = $listParam . ",'" . $list[$i]."'";
+		}
+	}elseif($type == "newAccess"){
+		$listParam = "(select '".$list[0]."' as gexfkw";
+		for($i=1 ; $i<sizeof($list) ; $i++){
+			$listParam = $listParam . " union select '" . $list[$i]."'";
+		}
+		$listParam = $listParam .")";
+	}else{
+		echo "Please select at least one keyword.";
+		exit;
+	}
+
+if($type != "newAccess"){
+	//// Loading the required corpus
+
+		require_once("corpus/".$corpus."/params.php");
+		require_once("corpus/generique.php"); // defines function "afficherTableau($conn)"
+
+	//// creating the response
+
+		afficherTableau($conn,$listParam,$list,$type,$doc,$word);
+}else{
+	pg_query($conn,"SET search_path = '".$corpus."', pg_catalog;");
+
+	$requete = "select gexfkw from ".$listParam." a where not gexfkw in (select mc from mc);";
+	$ptr = pg_query($conn,$requete);
+
+	$motsmanquants = False;
+	$mmlist = array();
+
+	while($ligne=pg_fetch_array($ptr)){
+		$motsmanquants = True;
+		$mmlist[sizeof($mmlist)] = $ligne["gexfkw"];
+	}
+
+	if($motsmanquants){
+		echo "_code_erreur mots manquants:";
+	}
+
+	for($i=0;$i<sizeof($mmlist);$i++){
+		echo $mmlist[$i]."  ";
+	}		
+}
+
+?>

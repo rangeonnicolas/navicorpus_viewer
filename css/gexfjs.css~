@@ -1,0 +1,589 @@
+/* Copyright (c) 2011 Raphaël Velt
+ * Licensed under the MIT License
+ * */
+
+body {
+    font-family: Helvetica, Arial, sans-serif; font-size: 12px;
+    background-color: #e0e0e8; color: #204020; margin: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+.gradient {
+    background-color: #f0f0f8; 
+    background-image: -webkit-radial-gradient(#ffffff, #d8d8e0); background-image: -moz-radial-gradient(#ffffff, #d8d8e0);
+}
+
+/* EN HAUT */
+
+#titlebar {
+    background: #ffffff; border-bottom: 1px solid #CCC; position: fixed; margin: 0; padding: 0; left: 0; top: 0; right: 0; height: 45px; overflow: hidden;
+}
+
+#maintitle {
+    position: absolute; left: 0; top: 0; width: 250px; text-align: center;
+}
+
+#creativecommons {
+    font-size: 0;
+    position: absolute; right: 0; top: 0px; 
+    opacity:0.2;
+    list-style: inline-block;
+}
+
+#creativecommons:hover {
+    opacity:0.6;
+}
+
+#creativecommons li {
+    padding: 0;
+    display:inline-block;
+    text-align: justify;
+}
+
+#ccimg{
+   vertical-align: top;
+    display: inline-block;
+    padding:1px; 
+    margin:1px; 
+}
+
+#cctxt{
+   vertical-align: top;
+    display: inline-block; 
+    width:120px;
+    font-size: 5px; 
+    margin : 3px;
+}
+
+#cctxt:hover{
+    font-size: 10px;
+    width:170px;
+}
+
+
+
+
+
+
+h1 {
+    margin:0;
+}
+
+h1 a {
+    background: url(../img/gephi.png) no-repeat;
+    color: #208020;
+    display: block;
+    height:45px;
+    margin: 0 ;
+    text-indent: -9999px;
+    width: 195px;
+}
+
+
+#logo {
+    background: url(../img/logo.png) no-repeat;
+    color: #208020;
+    display: block;
+    height:45px;
+    margin: 0;
+    text-indent: -9999px;
+    width: 300px;  
+}
+
+
+#searchinput {
+    background: #fff url(../img/search.gif) no-repeat right;
+    border: 1px solid #DDD;
+    font-size: 14px; line-height: 14px; 
+    height: 14px;
+    left: 250px;
+    padding: 1px 4px; margin: 0;
+    position: absolute;
+    top: 10px;
+    width: 320px;
+}
+
+#searchinput:focus, #searchinput:active {
+    border-color:#aaa;
+}
+
+#searchsubmit {
+    position: absolute; left: 560px; top: 13px; width: 20px; height: 20px; margin: 0; padding: 0; height: 16px; border: none; background: none; text-indent: -999px; /*cursor: pointer;*/ cursor: hand;
+}
+
+.grey {
+    color: #cccccc; font-style: italic;
+}
+
+/* AU CENTRE */
+
+#zonecentre {
+    position: fixed; top: 45px; bottom: 0px; left: 0; right: 0; overflow: hidden;
+}
+
+
+#carte {
+    position: absolute; left: 0px;
+}
+
+
+#occurencies_bckgnd {
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    bottom: 0; 
+    right: 0; 
+    overflow: auto; 
+    list-style: none; 
+    margin: 0; 
+    padding: 10px; 
+    border-top: 1px solid #cccccc;
+    background: rgba(50,50,50,0.9);
+}
+
+#occurencies_pannel {
+    position: absolute; 
+    top: 20px;  
+    right: 20px; 
+    overflow: hidden; 
+    list-style: none; 
+    margin: 0; 
+    padding: 5px; 
+    border-top: 1px solid #cccccc;
+    background: rgba(250,250,250,1);   
+}
+
+#occurencies_pannel2 {
+    position: absolute; 
+    bottom: -20px;  
+    left: -20px;
+    height: 200px;
+    width: 200px; 
+    overflow: hidden; 
+    list-style: none; 
+    margin: 0; 
+    padding: 5px; 
+    border-top: 1px solid #cccccc;
+    background: rgba(250,250,25,1);   
+}
+
+#howtouse_bckgnd {
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    bottom: 0; 
+    right: 0; 
+    overflow: auto; 
+    list-style: none; 
+    margin: 0; 
+    padding: 10px; 
+    border-top: 1px solid #cccccc;
+    background: rgba(50,50,50,0.9);
+}
+
+#howtouse_pannel {
+    position: absolute; 
+    top: 66px;  
+    right: 20px; 
+    left: 20px;
+    bottom: 20px;
+    overflow: auto; 
+    list-style: none; 
+    margin: 0; 
+    padding: 5px; 
+    border-top: 1px solid #cccccc;
+    background: rgba(250,250,250,1);   
+}
+
+#howtouse_pannel2 {
+    position: absolute; 
+    bottom: -20px;  
+    left: -20px;
+    height: 200px;
+    width: 200px; 
+    overflow: hidden; 
+    list-style: none; 
+    margin: 0; 
+    padding: 5px; 
+    border-top: 1px solid #cccccc;
+    background: rgba(250,250,25,1);   
+}
+/* ZOOM IN OUT */
+
+#ctlzoom {
+    position: absolute;
+    top : 5px;
+    right : 5px;
+    list-style: none; padding: 0; margin: 0; vertical-align: middle;
+}
+
+#ctlzoom li {
+    padding: 0; margin: 10px 0; width: 36px; text-align: center; vertical-align: middle; display:inline;
+}
+
+#zoomSliderzone {
+    height: 120px;
+}
+
+#zoomMinusButton, #zoomPlusButton {
+    vertical-align: middle;
+    display: inline-block; 
+    width: 24px; 
+    height: 24px; 
+    background:url(../img/plusmoins.png);  
+    margin: 0 auto;
+}
+
+#zoomMinusButton {
+    background-position: 0 -24px;
+}
+
+#zoomMinusButton:hover {
+    background-position: -24px -24px;
+}
+
+#zoomPlusButton {
+    background-position: 0 0;
+}
+
+#zoomPlusButton:hover {
+    background-position: -24px 0;
+}
+
+#lensButton, #edgesButton {
+    vertical-align: middle;display: inline-block; width: 36px; height: 36px; background:url(../img/loupe-edges.png); margin: 0 auto;
+}
+
+#lensButton {
+     background-position: -72px 0;
+}
+
+#lensButton:hover {
+    background-position: -36px 0; 
+}
+
+#lensButton.off {
+    background-position: 0 0;
+}
+
+#lensButton.off:hover {
+    background-position: -108px 0;
+}
+
+#edgesButton {
+    background-position: -72px -36px;
+}
+
+#edgesButton:hover {
+    background-position: -36px -36px;
+}
+
+#edgesButton.off {
+    background-position: 0 -36px;
+}
+
+#edgesButton.off:hover {
+    background-position: -108px -36px;
+}
+
+#zoomSlider {
+    background:#fff;
+    border:1px solid #aaa;
+    width: 120px; /*modifié par gexfjs.js*/
+    height: 10px;
+    margin: 0 auto; 
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* EN BAS A GAUCHE */
+
+#overviewzone {
+    position: fixed; left: 0; bottom: 0;
+    border-style:  solid solid none none; border-width: 5px; border-color: #eee;
+    box-shadow: 2px 0px 2px 0px #808090;
+}
+
+/* COLONNE DE GAUCHE */
+
+#leftcolumn {
+    position: absolute; top: 45px; bottom: 180px; left: -255px; width: 255px; background-color: rgb(250, 250, 252); box-shadow: 2px 0 2px #808090; padding: 0;
+}
+
+label.info{
+    position: relative;
+    left: 5px;
+/*    margin: 15px;
+   padding: 15px;*/
+}
+
+label.keyword {
+    /*font-family:Open Sans Italic;*/
+    font-weight: bold;
+    font-size: 20px;
+    color: white;/*color: #666;*/
+    border-radius: 6px 0px 0px 6px;
+    background: rgb(250, 100, 190);/*#86b3c1;/*background: #f0f0f0;*/
+    padding: 3px 10px;
+    text-align: left;
+}
+
+label.keywordDelete {
+    /*font-family:Open Sans Italic;*/
+    font-weight: bold;
+    font-size: 20px;
+    color: white;/*color: #666;*/
+    border-radius: 0px 6px 6px 0px;
+    background: rgb(250, 100, 190);   /*#86b3c1;/*background: #f0f0f0;*/
+    padding: 3px 10px;
+    text-align: left;
+    margin:1px;
+}
+
+label.keywordDelete:hover {
+    color: #666;
+    background: #f0f0f0;
+}
+
+
+label.keywordSmall {
+    /*font-family:Open Sans Italic;*/
+    font-weight: bold;
+    font-size: 10px;
+    color: white;/*color: #666;*/
+    border-radius: 4px 4px 4px 4px;
+    background: #86b3c1;/* #2C82BD;/*background: #f0f0f0;*/
+    padding: 1px 2px;
+    text-align: left;
+    margin:1px;
+}
+
+label.keywordSmallSelected {
+    /*font-family:Open Sans Italic;*/
+    font-weight: bold;
+    font-size: 10px;
+    color: white;/*color: #666;*/
+    border-radius: 4px 4px 4px 4px;
+    background: rgb(250, 100, 190);/* #2C82BD;/*background: #f0f0f0;*/
+    padding: 1px 2px;
+    text-align: left;
+    margin:1px;
+}
+
+label.keywordSmallMouseOverTextnav {
+    /*font-family:Open Sans Italic;*/
+    font-weight: bold;
+    font-size: 12px;
+    color: white;/*color: #666;*/
+    border-radius: 4px 4px 4px 4px;
+    background: rgb(50,200,110);/*background: rgb(83,143,162);/*background: #f0f0f0;*/
+    padding: 1px 2px;
+    text-align: left;
+    margin:1px;
+}
+
+
+label.keywordSmallMouseOverRelatkw {
+    /*font-family:Open Sans Italic;*/
+    font-weight: bold;
+    font-size: 20px;
+    color: white;/*color: #666;*/
+    border-radius: 6px 6px 6px 6px;
+    background: rgb(50,200,110);/*background: rgb(83,143,162);/*background: #f0f0f0;*/
+    padding: 2px 4px;
+    text-align: left;
+    margin:1px;
+}
+
+/*label.keywordSmall:hover {
+    color: #666;
+    background: #f0f0f0;
+}*/
+
+/*label.keywordSmallSelected:hover {
+    color: #666;
+    background: #f0f0f0;
+}*/
+
+table.textTab{
+    /*background: #f00ff0;  */
+    /*border: medium solid #000000;  */
+    text-align : center;
+    width :100%;
+    margin: 0;
+    border: 1px solid gray; /* Pas de bordure = "none". */
+    border-collapse: collapse; /* Valeur par défaut: "separate". */
+    border-spacing: 0;
+    
+}
+
+table.kwTab{
+    text-align : center;
+    width :100%;
+    margin: 0;
+    border: 1px solid gray; /* Pas de bordure = "none". */
+    border-collapse: collapse; /* Valeur par défaut: "separate". */
+    border-spacing: 0;
+    
+}
+
+table td{
+    padding: 4px; /* Pas de retrait autour du texte = "0". */
+    border: 1px solid #ccc; /* Pas de bordure = "none". */
+    /*vertical-align: top; /* Valeur par défaut: "middle" */
+}
+
+td.kewWordsColumn {
+    /*background: #f0f00f;  */
+    text-align : right;
+
+}
+
+td.textColumn {
+    /*background: #f0f00f;  */
+    vertical-align: middle;
+}
+
+td.otherColumn {
+    /*background: #f0f00f;  */
+    font-weight: bold;
+    color: #2C82BD;
+
+}
+
+table tr:hover{
+    background: #eee;
+}
+
+/* EN BAS */
+
+#textNavigation {
+    overflow: hidden ;position: absolute; right: 0px; bottom: 0px; background-color: rgb(250, 250, 252); box-shadow: 2px 0 2px #808090; padding: 0; 
+}
+
+#textContent {
+    position: absolute; left: 0; top: 0; bottom: 0; right: 0; overflow: auto; list-style: none; margin: 0; padding: 0; border-top: 5px solid #eee; border-left: 5px solid #eee; 
+}
+
+#unfold2 {
+    position: absolute; left: 0; top: 0; width: 100%; height: 6px; background:  #eee; border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;
+}
+
+#aUnfold2 {
+    float: left; width: 100%; height: 100%;
+}
+
+.joystick:hover {
+    cursor : n-resize;
+}
+
+/* GESTION DE LA BARRE DE GAUCHE */
+
+#unfold {
+    position: absolute; top: 16px; right: -14px; width: 12px; height: 12px; background: rgb(250, 250, 252); padding: 2px 2px 2px 0; border-top-right-radius: 5px; border-bottom-right-radius: 5px; box-shadow: 1px 1px 2px #808090;
+}
+
+#aUnfold {
+    float: left; width: 12px; height: 12px; background-image: url(../img/fleches-horiz.png);
+}
+
+.leftarrow {
+    background-position: -12px 0;
+}
+
+.rightarrow {
+    background-position: 0 0;
+}
+
+.leftarrow:hover {
+    background-position: -12px -12px;
+}
+
+.rightarrow:hover {
+    background-position: 0 -12px;
+}
+
+
+/* ZONE GAUCHE */
+
+#leftcontent {
+    position: absolute; left: 0; top: 0; bottom: 0; right: 0; overflow: auto; list-style: none; margin: 0; padding: 10px; border-top: 1px solid #cccccc;
+}
+
+div.largepill {
+    float: left; width: 16px; height: 16px; border-radius: 8px; margin: 0 5px 0 0;
+}
+
+div.smallpill {
+    float: left; width: 12px; height: 12px; border-radius: 6px; margin: 0 5px 0 0;
+}
+
+#leftcontent h3 {
+    font-size: 16px;
+}
+
+#leftcontent h4 {
+    font-size: 14px;
+}
+
+#leftcontent h3, #leftcontent h4, #leftcontent p, #leftcontent ul , #textContent h3{
+    margin: 5px;
+}
+
+#leftcontent ul {
+    list-style: none; padding: 0;
+}
+
+#leftcontent li {
+    margin: 2px 0; padding: 0; font-size: 12px;
+}
+
+a {
+    color: #2C82BD; font-weight: bold; text-decoration: none;
+}
+
+a:hover {
+    /*color: #000080;*/
+}
+
+/* AUTOCOMPLETE */
+
+#autocomplete {
+    position: absolute; display: none; padding: 0; margin: 0;
+    border-style: none solid; border-color: #ccc; border-width: 1px;
+}
+
+#autocomplete div {
+    border-bottom: 1px solid #ccc; padding: 0; margin: 0; float: left; clear: both; background: #fff;
+}
+
+#autocomplete h4 {
+    float: left; width: 80px; margin: 5px; font-size: 12px;
+}
+
+#autocomplete ul {
+    float: left; width: 240px; list-style: none; padding: 0; margin: 0;
+}
+
+#autocomplete li {
+    margin: 0; width: 240px; height: 28px; font-size: 12px; clear: both;
+}
+
+#autocomplete li a {
+    display: block; width: 240px; height: 28px; background: #fff; color: #2C82BD;
+}
+
+#autocomplete li.hover a {
+    color: #fff; background: #2C82BD;
+}
+
+#autocomplete span {
+    float: left; margin: 0; padding: 6px 2px 0;
+}
+
+#autocomplete img {
+    float: left; border: 0; width: 24px; height: 24px; margin: 2px 6px;
+}

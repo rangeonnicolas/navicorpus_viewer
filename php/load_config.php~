@@ -1,0 +1,8 @@
+<?php
+	if(file_exists("../config.php")){
+		echo 'ioo'
+	}else{
+		require_once("./default_config.php");
+	}
+
+
