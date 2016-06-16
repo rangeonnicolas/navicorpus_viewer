@@ -7,9 +7,9 @@ git clone https://github.com/rangeonnicolas/navicorpus_viewer.git
 sudo nano /etc/apache2/sites-available/navicorpus_viewer.conf
 
 <VirtualHost *:80>
-        DocumentRoot /usr/local/app/navicorpus/navicorpus_viewer/     
+        DocumentRoot /usr/local/apps/navicorpus/navicorpus_viewer/     
 
-        <Directory "/usr/local/app/navicorpus/navicorpus_viewer">
+        <Directory "/usr/local/apps/navicorpus/navicorpus_viewer">
                 Order deny,allow
                 Allow from all
                 Require all granted

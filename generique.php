@@ -20,7 +20,7 @@ function afficherTableau($conn, $wordListSTR, $wordListARRAY, $type, $doc, $word
 	}
 }
 
-function formatAdditionnalColumns(){
+function formatAdditionalColumns(){
 	$result = '';
 	foreach($GLOBALS['autresColonnes'] as $col){
 		$result = $result.', b."'.$col.'"';
@@ -62,7 +62,7 @@ function afficherTableauTextes($conn, $listParam, $wordListARRAY)
 								order by id_document,-bb.weight';
 
 	if(count($GLOBALS['autresColonnes']) > 0){
-		$formatedAdditionalColumns = formatAdditionnalColumns();
+		$formatedAdditionalColumns = formatAdditionalColumns();
 		$relatedTable = $GLOBALS["schema"].'___add_docs';
 		$requete = 'SELECT a.* '.$formatedAdditionalColumns.' from ('.$requete.') a, '.$relatedTable.' b WHERE a.id_doc = b.id_doc';
 	} 	
@@ -94,7 +94,7 @@ function afficherTableauTextes($conn, $listParam, $wordListARRAY)
 
 			echo '<tr>';
 			echo '<td class=textColumn><a title="' . $GLOBALS["onTitleOver"] . '" href=\'' . $ligne["url"] . '\' target="_blank">' . $ligne["title"] . '</a></td>';
-			eval($GLOBALS["additionnalCols"]);
+			eval($GLOBALS["additionalCols"]);
 			$listemc[1] = $ligne["mc"];
 			echo '<td class=kewWordsColumn>';
 		}
