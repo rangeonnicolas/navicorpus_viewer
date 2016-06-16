@@ -22,10 +22,10 @@ $additionnalCols = "echo '
 							  <a href='.\$ligne['url_vw'].' target=\"_blank\">
 							  <img alt=\"'.\$ligne['pol'].'\" src=\"./corpora/europarl/img/'.\$ligne['pol'].'.png\" title=\"Policy area: '.\$ligne['pol'].'\">
 							  </img></a></td>
-';"     ;
+';"     ; // very ugly! Feel free to fix it!
 global $autresColonnes;
 $autresColonnes = NULL;
-$autresColonnes = ' ,"Date","pol","url_vw" '; //needs to begin with a coma (feel free to fix this weird thing!)
+$autresColonnes = ["Date","pol","url_vw"];
 
 ?>
 

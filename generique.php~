@@ -243,7 +243,7 @@ function afficherWordPositions($conn, $doc, $word)
 		$ptr2 = pg_query($conn, $requete);
 		$ligne = pg_fetch_array($ptr2);
 		$text = $ligne["t"];
-		$new_text = "<em>";
+		$new_text = "";
 		$from = 0;
 		for ($k = 0; $k < $j; $k++) {
 			$new_text = $new_text . mb_substr($text, $from, $better_keys[$k] - 1 - $from) . "</em><label class=keywordSmallMouseOverTextnav>" . mb_substr($text, $better_keys[$k] - 1, $better[$better_keys[$k]]) . "</label><em>";

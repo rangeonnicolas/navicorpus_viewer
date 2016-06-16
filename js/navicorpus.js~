@@ -3,7 +3,7 @@
 //todo: variables globales a mettre ds le namespace :
 var keyWordNavigation = true;
 var dragOnJoys = false;
-var keywordsMouseOverList = [];
+var keywordsMouseOverList = []; ;
 var disp_occur_timeout = null;
 var textNavHeight = 180;
 
@@ -12,7 +12,7 @@ var textNavHeight = 180;
 var hyerarScroll = 2;
 var hyerarSeuil = 3;
 var relatedKW = "";
-var wordList = [];
+var wordList = []; ;
 
 function chargerCorpus(corpus, corporaPath) {
     jQuery.ajax({
@@ -299,7 +299,7 @@ function startMoveJoys(evt) {
 function keywordMouseOver(id) {
 
     var _label = $("#" + id).html();
-    keywordsMouseOverList = [];
+    keywordsMouseOverList = []; ;
 
     _test = $("#textnav_1");
     for (var _i = 1; _test.length > 0; _i++) {
@@ -323,7 +323,7 @@ function keywordMouseOut() {
     for (var _i = 0; _i < keywordsMouseOverList.length; _i++) {
         $(keywordsMouseOverList[_i]).attr("class", "keywordSmall");
     }
-    keywordsMouseOverList = [];
+    keywordsMouseOverList = []; ;
 }
 
 function display_occurencies(doc, word) {

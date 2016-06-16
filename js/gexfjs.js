@@ -707,7 +707,7 @@ function loadGraph() {
                     baseDarker : "rgba(" + Math.floor(62 +  .5 * _r) + "," + Math.floor(62 +  .5 * _g) + "," + Math.floor(62 +  .5 * _b) + ",1)",
                     gris       : "rgba(" + Math.floor(84 + .33 * _r) + "," + Math.floor(84 + .33 * _g) + "," + Math.floor(84 + .33 * _b) + ",.5)"
                 }
-                _d.attributes = [];
+                _d.attributes = []; ;
                 $(_attr).each(function() {
                     var _a = $(this),
                         _for = _a.attr("for");                    
@@ -919,7 +919,7 @@ function traceMap() {
     }
     
     // Determination du noeud mis en valeur (par survol de souris)
-    var _tagsMisEnValeur = [];
+    var _tagsMisEnValeur = []; ;
     
     if ( _centralNode != -1 ) {
         _tagsMisEnValeur = [ _centralNode ];
