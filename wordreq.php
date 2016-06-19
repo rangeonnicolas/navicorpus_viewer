@@ -2,7 +2,7 @@
 
 // improvements on this code (good practises, etc...) are very welcomed (and encourraged), I wrote this code while learning PHP, so it's like a beginner code...!
 
-	$analytics = true;
+	$analytics = false;
 
 //// Only useful for tests
 

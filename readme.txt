@@ -4,6 +4,9 @@ mkdir /usr/local/app/navicorpus
 cd /usr/local/app/navicorpus
 git clone https://github.com/rangeonnicolas/navicorpus_viewer.git
 
+
+
+
 sudo nano /etc/apache2/sites-available/navicorpus_viewer.conf
 
 <VirtualHost *:80>
@@ -21,6 +24,13 @@ sudo nano /etc/apache2/sites-available/navicorpus_viewer.conf
 
 sudo a2ensite navicorpus_viewer.conf
 sudo service apache2 restart
+
+sudo apt-get install postgresql ????
+
+cd navicorpus_viewer ?????
+cd sample_data
+psql -U postgres -f ./script_import.sql
+
 
 
 

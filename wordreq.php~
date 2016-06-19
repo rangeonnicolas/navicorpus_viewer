@@ -82,8 +82,8 @@
 if($type != "newAccess"){
 	//// Loading the required corpus
 
-		require_once("corpus/".$corpus."/params.php");
-		require_once("corpus/generique.php"); // defines function "afficherTableau($conn)"
+		require_once($GLOBALS['corporaPath'].$corpus."/params.php");
+		require_once("./generique.php"); // defines function "afficherTableau($conn)"
 
 	//// creating the response
 
